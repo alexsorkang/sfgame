@@ -6,7 +6,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 
-export default class createButton extends React.Component {
+export default class CreateButton extends React.Component {
   constructor(props, _railsContext) {
     super(props);
   }
@@ -17,14 +17,13 @@ export default class createButton extends React.Component {
   }
 }
 
-createButton.defaultProps = {
+CreateButton.defaultProps = {
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  ReactDOM.render(
-    // <Hello name="React" />,
-    <createButton/>,
-    document.getElementById('buttonContent'),
-  )
-})
+// document.addEventListener('DOMContentLoaded', () => {
+//   ReactDOM.render(
+//     <createButton/>
+//     // document.getElementById('buttonContent')
+//   )
+// })
 

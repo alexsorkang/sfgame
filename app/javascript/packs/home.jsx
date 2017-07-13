@@ -6,13 +6,13 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import './app'
-import joinButton from './buttons/joinButton'
-import createButton from './buttons/createButton'
+import JoinButton from './buttons/joinButton.jsx'
+import CreateButton from './buttons/createButton.jsx'
 
 export default class Home extends React.Component {
   constructor(props, _railsContext) {
     super(props);
-    // this.state={name:'alex'}
+    this.state={buttonToggled:''}
     // this.openToggle = this.openToggle.bind(this);
     this.buttonToggle = this.buttonToggle.bind(this);
   }
@@ -20,6 +20,12 @@ export default class Home extends React.Component {
     this.setState({buttonToggled:button.target.id})
   }
   render() {
+    let button = null
+    if (this.state.buttonToggled == "joinButton") {
+      button = <JoinButton/>
+    } else if (this.state.buttonToggled == 'createButton') {
+      button = <CreateButton/>
+    }
     return (
       <div className="container-fluid topMargin">
 
@@ -36,7 +42,7 @@ export default class Home extends React.Component {
           </div>
         </div>
         <div id="buttonContent" className="row">
-          
+          {button}
         </div>
       </div>
     );
@@ -49,8 +55,8 @@ Home.defaultProps = {
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-    <Home />,
-    document.getElementById('root'),
+    <Home/>,
+    document.getElementById('root')
   )
 })
 

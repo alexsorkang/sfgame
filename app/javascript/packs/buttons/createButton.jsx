@@ -12,7 +12,16 @@ export default class CreateButton extends React.Component {
   }
   render() {
     return (
-      <div>create</div>
+      <div>
+        <hr/>
+        <div className="row">
+          <div className="form-group">
+            <input type="text" className="form-control" id="playerName" placeholder="Enter Name"/>
+          </div>
+        </div>
+        <hr/>
+      </div>
+
     );
   }
 }

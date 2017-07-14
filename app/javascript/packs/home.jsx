@@ -21,13 +21,19 @@ export default class Home extends React.Component {
   }
   render() {
     let button = null
+    let createClass = null
+    let joinClass = null
     if (this.state.buttonToggled == "joinButton") {
       button = <JoinButton/>
+      joinClass = 'active'
+      createClass = ''
     } else if (this.state.buttonToggled == 'createButton') {
       button = <CreateButton/>
+      joinClass = ''
+      createClass = 'active'
     }
     return (
-      <div className="container-fluid topMargin">
+      <div className="container topMargin">
 
         <div className="row justify-content-center">
           <h3>
@@ -37,11 +43,12 @@ export default class Home extends React.Component {
 
         <div className="row justify-content-center">
           <div className="btn-group">
-            <button id="joinButton" type="button" className="btn btn-secondary" role="button" aria-pressed="false" onClick={this.buttonToggle}>Join</button>
-            <button id="createButton" type="button" className="btn btn-secondary" role="button" aria-pressed="false" onClick={this.buttonToggle}>Create</button>
+            <button id="joinButton" type="button" className={"btn btn-secondary "+joinClass} role="button" aria-pressed="false" onClick={this.buttonToggle}>Join</button>
+            <button id="createButton" type="button" className={"btn btn-secondary "+createClass} role="button" aria-pressed="false" onClick={this.buttonToggle}>Create</button>
           </div>
         </div>
-        <div id="buttonContent" className="row">
+        
+        <div id="buttonContent" className="row justify-content-center">
           {button}
         </div>
       </div>

@@ -8,7 +8,24 @@ export default class JoinButton extends React.Component {
   }
   render() {
     return (
-      <div><h3>join</h3></div>
+      <div>
+        <hr/>
+        <form>
+          <div className="row">
+            <div className="form-group">
+              <input type="text" className="form-control" id="playerName" placeholder="Enter Name"/>
+            </div>
+          </div>
+          <div className="row">
+            <div className="form-group">
+              <input type="text" className="form-control" id="gameUrl" placeholder="Enter URL"/>
+            </div>
+          </div>
+          <button type="submit" className="btn btn-secondary">Submit</button>
+        </form>
+        <hr/>
+      </div>
+
     );
   }
 }
@@ -22,4 +39,6 @@ JoinButton.defaultProps = {
     // document.getElementById('buttonContent')
 //   )
 // })
+
+// <label htmlFor="playerName">name</label>
 

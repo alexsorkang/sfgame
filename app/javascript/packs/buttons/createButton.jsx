@@ -14,11 +14,16 @@ export default class CreateButton extends React.Component {
     return (
       <div>
         <hr/>
-        <div className="row">
-          <div className="form-group">
-            <input type="text" className="form-control" id="playerName" placeholder="Enter Name"/>
+        <form>
+          <div className="row">
+            <div className="form-group">
+              <input type="text" className="form-control" id="playerName" placeholder="Enter Name"/>
+            </div>
           </div>
-        </div>
+          <div className='row justify-content-center'>
+            <button type="submit" className="btn btn-secondary">Submit</button>
+          </div>
+        </form>
         <hr/>
       </div>
 

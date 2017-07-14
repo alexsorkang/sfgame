@@ -43,8 +43,8 @@ export default class Home extends React.Component {
 
         <div className="row justify-content-center">
           <div className="btn-group">
-            <button id="joinButton" type="button" className={"btn btn-secondary "+joinClass} role="button" aria-pressed="false" onClick={this.buttonToggle}>Join</button>
-            <button id="createButton" type="button" className={"btn btn-secondary "+createClass} role="button" aria-pressed="false" onClick={this.buttonToggle}>Create</button>
+            <button id="joinButton" type="button" className={"btn btn-secondary "+joinClass} role="button" aria-pressed="false" onClick={this.buttonToggle}>Join game</button>
+            <button id="createButton" type="button" className={"btn btn-secondary "+createClass} role="button" aria-pressed="false" onClick={this.buttonToggle}>New game</button>
           </div>
         </div>
         

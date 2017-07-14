@@ -21,7 +21,9 @@ export default class JoinButton extends React.Component {
               <input type="text" className="form-control" id="gameUrl" placeholder="Enter URL"/>
             </div>
           </div>
-          <button type="submit" className="btn btn-secondary">Submit</button>
+          <div className='row justify-content-center'>
+            <button type="submit" className="btn btn-secondary">Submit</button>
+          </div>
         </form>
         <hr/>
       </div>

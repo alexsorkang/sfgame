@@ -6,19 +6,24 @@ export default class JoinButton extends React.Component {
   constructor(props, _railsContext) {
     super(props);
   }
-  render() {
+  render() { 
+    // console.log(this.props)
+    var $ = require ('jquery')
+    var csrfToken = $('meta[name=csrf-token]').attr('content');
     return (
       <div>
         <hr/>
-        <form>
+        <form action="/games" method="post">
+          <input type='hidden' name='authenticity_token' value={csrfToken} />
+
           <div className="row">
             <div className="form-group">
-              <input type="text" className="form-control" id="playerName" placeholder="Enter Name"/>
+              <input type="text" name="name" className="form-control" id="playerName" placeholder="Enter Name"/>
             </div>
           </div>
           <div className="row">
             <div className="form-group">
-              <input type="text" className="form-control" id="gameUrl" placeholder="Enter URL"/>
+              <input type="text" name="url" className="form-control" id="gameUrl" placeholder="Enter URL"/>
             </div>
           </div>
           <div className='row justify-content-center'>

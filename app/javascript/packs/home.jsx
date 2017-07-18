@@ -13,7 +13,6 @@ export default class Home extends React.Component {
   constructor(props, _railsContext) {
     super(props);
     this.state={buttonToggled:''}
-    // this.openToggle = this.openToggle.bind(this);
     this.buttonToggle = this.buttonToggle.bind(this);
   }
   buttonToggle(button) {
@@ -24,7 +23,7 @@ export default class Home extends React.Component {
     let createClass = null
     let joinClass = null
     if (this.state.buttonToggled == "joinButton") {
-      button = <JoinButton/>
+      button = <JoinButton token={this.props.token}/>
       joinClass = 'active'
       createClass = ''
     } else if (this.state.buttonToggled == 'createButton') {
@@ -61,8 +60,10 @@ Home.defaultProps = {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  const node = document.getElementById('root')
+  const data = JSON.parse(node.getAttribute('data'))
   ReactDOM.render(
-    <Home/>,
+    <Home {...data}/>,
     document.getElementById('root')
   )
 })
